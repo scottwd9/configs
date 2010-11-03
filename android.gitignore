@@ -1,7 +1,10 @@
 .DS_Store
+profile
+*.swp
 *~
 
 .metadata
+.classpath
+.project
 bin/
 gen/
-*.apk
