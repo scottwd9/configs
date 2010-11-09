@@ -62,6 +62,8 @@ inhibit-startup-echo-area-message t)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
+(setq-default line-spacing 2)
+
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
