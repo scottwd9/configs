@@ -64,12 +64,12 @@ inhibit-startup-echo-area-message t)
 
 (setq-default line-spacing 2)
 
-(ido-mode 1)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
+;;(ido-mode 1)
+;;(setq ido-enable-flex-matching t)
+;;(setq ido-everywhere t)
 
 (require 'color-theme)
 (setq color-theme-load-all-themes nil)
 (color-theme-initialize)
-(require 'color-theme-irblack)
-(if window-system (color-theme-irblack) )
+(require 'color-theme-tango)
+(if window-system (color-theme-tango))

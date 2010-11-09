@@ -1,4 +1,4 @@
-;;; Emacs Color theme based on the Tango Palette colors. 
+;;; Emacs Color theme based on the Tango Palette colors.
 ;;; First derived from color-theme-tango.el,  created by danranx@gmail.com :
 ;;; http://www.emacswiki.org/emacs/color-theme-tango.el
 
@@ -111,7 +111,7 @@
      (custom-button-pressed  ((t (:inherit 'custom-button :box (:style pressed-button)))))
      (custom-button-mouse-pressed-unraised  ((t (:inherit 'custom-button-unraised :background "grey60"))))
      (custom-documentation ((t (:italic t))))
-     (message-cited-text ((t (:foreground "#edd400")))) 
+     (message-cited-text ((t (:foreground "#edd400"))))
      (gnus-cite-face-1 ((t (:foreground "#ad7fa8"))))
      (gnus-cite-face-2 ((t (:foreground "sienna4"))))
      (gnus-cite-face-3 ((t (:foreground "khaki4"))))

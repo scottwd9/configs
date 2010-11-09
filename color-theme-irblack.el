@@ -3,11 +3,11 @@
 ;; David Zhou
 ;;
 ;; The IR_Black theme is originally from:
-;;    
+;;
 ;; http://blog.infinitered.com/entries/show/8
-;;    
+;;
 ;; This theme needs color-theme.
-;;    
+;;
 ;; To use, put this in your init files:
 ;;
 ;; (require 'color-theme)
@@ -39,10 +39,10 @@
      (font-lock-keyword-face ((t (:foreground "#96CBFE"))))
      (font-lock-preprocessor-face ((t (:foreground "#96CBFE"))))
      (font-lock-reference-face ((t (:foreground "#C6C5FE"))))
-     
+
      (font-lock-regexp-grouping-backslash ((t (:foreground "#E9C062"))))
      (font-lock-regexp-grouping-construct ((t (:foreground "red"))))
-     
+
      (linum ((t (:background "#000000" :foreground "#666666"))))
 
      (minibuffer-prompt ((t (:foreground "#888888"))))
@@ -50,7 +50,7 @@
      (ido-first-match ((t (:foreground "#8F9D6A"))))
      (ido-only-match ((t (:foreground "#8F9D6A"))))
      (mumamo-background-chunk-submode ((t (:background "#222222"))))
-     
+
      (font-lock-string-face ((t (:foreground "#A8FF60"))))
      (font-lock-type-face ((t (:foreground "#FFFFB6"))))
      (font-lock-variable-name-face ((t (:foreground "#C6C5FE"))))
@@ -78,8 +78,8 @@
      (diff-removed ((t (:background "#420E09" :foreground "#F8F8F8"))))
      (diff-content ((t nil)))
      (diff-header ((t (:background "#0E2231" :foreground "#F8F8F8"))))
-     
-     
+
+
      ;; nxml
      (nxml-delimiter ((t (:foreground "#96CBFE"))))
      (nxml-name ((t (:foreground "#96CBFE"))))
@@ -88,3 +88,4 @@
 
      )))
 
+(provide 'color-theme-irblack)
