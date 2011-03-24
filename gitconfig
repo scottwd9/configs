@@ -15,7 +15,6 @@
 [branch]
     autosetupmerge = true
 [core]
-    safecrlf = true
     autocrlf = input
     editor = emacs -nw
 [color]
