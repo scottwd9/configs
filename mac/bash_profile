@@ -4,21 +4,6 @@ alias l='ls -lF'
 alias la='ls -laF'
 alias emacs='emacs -nw --no-init-file'
 
-## git aliases
-alias gp='git push'
-alias gb='git branch'
-alias gc='git checkout'
-alias gm='git commit -m'
-alias gma='git commit -am'
-alias gd='git diff'
-alias gs='git status'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gl='git log'
-alias ga='git add'
-alias gcl='git clone'
-
 export EDITOR="emacs -nw --no-init-file"
 export VISUAL="emacs -nw --no-init-file"
 
@@ -28,10 +13,22 @@ parse_git_branch() {
 
 export PS1="\u@\h:\[\e[0;34m\]\w\[\e[0m\] \[\e[0;32m\]\$(parse_git_branch)\[\e[0m\](\j)$ "
 
-# Setting PATH for Python 3.2
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.2/bin:${PATH}"
-export PATH
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home)
 
-PATH="/android/platform-tools:/android/tools:${PATH}"
-export PATH
+# Seam
+export SEAM_HOME=/Users/wds/lib/seam
+export PATH="/Users/wds/lib/seam:${PATH}"
+
+# Android SDK
+export ANDROID_HOME=/android
+export PATH="/android/platform-tools:/android/tools:${PATH}"
+
+# PostgreSQL 8.4
+export PATH="/Library/PostgreSQL/8.4/bin:${PATH}"
+
+# Python 3.2
+export PATH="/Library/Frameworks/Python.framework/Versions/3.2/bin:${PATH}"
+
+# Subversion
+export PATH="/opt/subversion/bin:${PATH}"
