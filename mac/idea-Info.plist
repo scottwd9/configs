@@ -104,13 +104,13 @@
       </dict>
 
       <key>VMOptions</key>
-      <string>-ea -Xverify:none -Xbootclasspath/a:../lib/boot.jar -XX:+UseFastAccessorMethods -XX:+OptimizeStringConcat -XX:+UseCompressedOops -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing</string>
+      <string>-ea -Xverify:none -Xbootclasspath/a:../lib/boot.jar -XX:+UseFastAccessorMethods -XX:+OptimizeStringConcat -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing</string>
 
       <key>VMOptions.i386</key>
       <string>-Xms128m -Xmx512m -XX:MaxPermSize=250m -XX:ReservedCodeCacheSize=64m</string>
 
       <key>VMOptions.x86_64</key>
-      <string>-Xms1g -Xmx1g -Xss2m -XX:MaxPermSize=384m -XX:ReservedCodeCacheSize=128m -XX:CompileThreshold=100 -XX:+UseCompressedOops</string>
+      <string>-Xms128m -Xmx1g -Xss2m -XX:MaxPermSize=384m -XX:ReservedCodeCacheSize=128m -XX:CompileThreshold=100 -XX:+UseCompressedOops</string>
 
       <key>WorkingDirectory</key>
       <string>$APP_PACKAGE/bin</string>
