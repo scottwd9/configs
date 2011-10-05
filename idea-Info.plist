@@ -110,7 +110,7 @@
       </dict>
 
       <key>VMOptions</key>
-      <string>-ea -Xverify:none -XX:+UseFastAccessorMethods -XX:+UseCompressedOops -XX:+DoEscapeAnalysis -XX:UseSSE=2 -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:CompileThreshold=1000 -Xbootclasspath/a:../lib/boot.jar</string>
+      <string>-ea -Xverify:none -XX:+UseFastAccessorMethods -XX:+UseCompressedOops -XX:+DoEscapeAnalysis -XX:UseSSE=2 -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -Xbootclasspath/a:../lib/boot.jar</string>
 
       <key>VMOptions.i386</key>
       <string>-Xms128m -Xmx512m -XX:MaxPermSize=250m -XX:ReservedCodeCacheSize=64m</string>
