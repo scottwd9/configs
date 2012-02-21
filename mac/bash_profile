@@ -3,9 +3,12 @@ alias ls='ls -G'
 alias l='ls -lF'
 alias la='ls -laF'
 alias emacs='emacs -nw --no-init-file'
+alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+alias ec="emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+alias ecn="emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
 
-export EDITOR="emacs -nw --no-init-file"
-export VISUAL="emacs -nw --no-init-file"
+export EDITOR="ec"
+export VISUAL="ec"
 
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e ' s/* \(.*\)/(\1)/'
@@ -13,22 +16,35 @@ parse_git_branch() {
 
 export PS1="\u@\h:\[\e[0;34m\]\w\[\e[0m\] \[\e[0;32m\]\$(parse_git_branch)\[\e[0m\](\j)$ "
 
+# ~/bin
+export PATH=~/bin:$PATH
+
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# Seam
-export SEAM_HOME=/Users/wds/lib/seam
-export PATH="/Users/wds/lib/seam:${PATH}"
+# TomCat
+export CATALINA_HOME=~/opt/tomcat
 
-# Android SDK
-export ANDROID_HOME=/android
-export PATH="/android/platform-tools:/android/tools:${PATH}"
+# Maven
+export M2_HOME=~/opt/maven
+export PATH=$M2_HOME/bin:$PATH
 
-# PostgreSQL 8.4
-export PATH="/Library/PostgreSQL/8.4/bin:${PATH}"
+# Groovy
+export GROOVY_HOME=~/opt/groovy
+export PATH=$GROOVY_HOME/bin:$PATH
 
-# Python 3.2
-export PATH="/Library/Frameworks/Python.framework/Versions/3.2/bin:${PATH}"
+# Scala
+export SCALA_HOME=~/opt/scala
+export PATH=$SCALA_HOME/bin:$PATH
 
-# Subversion
-export PATH="/opt/subversion/bin:${PATH}"
+# MongoDB
+export MONGO_HOME=~/opt/mongo
+export PATH=$MONGO_HOME/bin:$PATH
+
+# Load RVM function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
