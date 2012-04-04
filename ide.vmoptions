@@ -1,0 +1,17 @@
+-server
+-Dosgi.requiredJavaVersion=1.6
+-Declipse.p2.unsignedPolicy=allow
+-Xmn128m
+-Xms1g
+-Xmx2g
+-XX:PermSize=384m
+-XX:MaxPermSize=384m
+-XX:ReservedCodeCacheSize=128m
+-XX:+UseCompressedOops
+-Xverify:none
+-XX:+UseFastAccessorMethods
+-XX:+UseParNewGC
+-XX:+UseConcMarkSweepGC
+-XX:+CMSClassUnloadingEnabled
+-XX:+CMSParallelRemarkEnabled
+-XX:+TieredCompilation
