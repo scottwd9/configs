@@ -10,11 +10,14 @@ alias ecn="emacsclient -n -c -a /Applications/Emacs.app/Contents/MacOS/Emacs"
 export EDITOR="ec"
 export VISUAL="ec"
 
-parse_git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e ' s/* \(.*\)/(\1)/'
+function parse_git_dirty() {
+	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+function parse_git_branch() {
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e " s/* \(.*\)/$(parse_git_dirty)(\1)/"
 }
 
-export PS1="\u@\h:\[\e[0;34m\]\w\[\e[0m\] \[\e[0;32m\]\$(parse_git_branch)\[\e[0m\](\j)$ "
+export PS1="\[\033[G\]\u@\h:\[\e[0;34m\]\w\[\e[0m\] \[\e[0;32m\]\$(parse_git_branch)\[\e[0m\](\j)$ "
 
 # ~/bin
 export PATH=~/bin:$PATH
