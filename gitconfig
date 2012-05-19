@@ -1,8 +1,8 @@
 [user]
     name = scottwd9
-    email = scottwd9@gmail.com
+    email = scottwd9
 [alias]
-    s = status
+    s = status -sb
     c = commit
     cm = commit -m
     cma = commit -a -m
