@@ -20,6 +20,6 @@
 [branch]
     autosetupmerge = true
 [push]
-	default = current
+    default = current
 [color]
     ui = auto
