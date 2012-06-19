@@ -9,14 +9,15 @@
     br = branch
     co = checkout
     d = diff
+    ds = diff --stat
+    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
     lg = log -p
-    l = log --graph --decorate --pretty=oneline --abbrev-commit
     ll = log --pretty=format:'%h %ad | %s%d [%an]' --decorate --graph --date=short
     lla = log --pretty=format:'%h %ad | %s%d [%an]' --decorate --graph --date=short --all
     ls = ls-files
 [core]
     autocrlf = input
-    editor = emacs -nw
+    editor = "emacs -nw --no-init-file"
 [branch]
     autosetupmerge = true
 [push]
