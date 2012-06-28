@@ -1,7 +1,6 @@
 ;; Load solarized theme
 (disable-theme 'zenburn)
 (color-theme-solarized-dark)
-;;(load-theme 'solarized-dark t)
 
 ;; Fix mac keys
 (setq mac-command-modifier 'meta)
@@ -14,9 +13,19 @@
 ;; Turn off whitespace mode
 (add-hook 'prog-mode-hook 'prelude-turn-off-whitespace t)
 (add-hook 'prog-mode-hook 'flyspell-mode 0)
+(flyspell-mode 0)
 
 ;; Use Inconsolata font
 (set-frame-font "Inconsolata-14")
+
+;; require final new line
+(setq require-final-newline t)
+
+;; delete trailing whitespace on save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; use visual bell, no beeps!
+(setq visible-bell t)
 
 ;; Start server
 (server-start)
