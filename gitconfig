@@ -2,6 +2,7 @@
     name = scottwd9
     email = scottwd9
 [alias]
+    pr = pull --rebase
     s = status -sb
     c = commit
     cm = commit -m
