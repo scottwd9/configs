@@ -2,6 +2,9 @@
     name = scottwd9
     email = scottwd9
 [alias]
+    p = pull
+    f = fetch
+    fp = fetch --prune
     pr = pull --rebase
     s = status -sb
     c = commit
