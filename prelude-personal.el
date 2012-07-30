@@ -10,13 +10,14 @@
 ;; No scrollbars
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; Turn off whitespace mode
+;; Turn off whitespace mode, flyspell
 (add-hook 'prog-mode-hook 'prelude-turn-off-whitespace t)
 (add-hook 'prog-mode-hook 'flyspell-mode 0)
-(flyspell-mode 0)
+(remove-hook 'message-mode-hook 'prelude-turn-on-flyspell)
+(remove-hook 'text-mode-hook 'prelude-turn-on-flyspell)
 
 ;; Use Inconsolata font
-(set-frame-font "Inconsolata-14")
+(set-frame-font "Menlo-12")
 
 ;; require final new line
 (setq require-final-newline t)
