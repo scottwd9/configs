@@ -30,3 +30,20 @@
 
 ;; Start server
 (server-start)
+
+(add-to-list 'load-path "~/.emacs.d/personal/scala-emacs")
+(require 'scala-mode-auto)
+
+;;(add-hook 'scala-mode-hook
+;;          '(lambda ()
+;;             (scala-mode-feature-electric-mode)
+;;             ))
+
+(require 'scala-mode)
+(add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
+(add-to-list 'load-path "~/.emacs.d/personal/ensime_2.9.2-0.9.7/elisp")
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+(push "~/lib/scala/bin/" exec-path)
+(push "~/bin" exec-path)
