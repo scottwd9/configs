@@ -9,6 +9,7 @@
 -XX:ReservedCodeCacheSize=128m
 -XX:+UseCompressedOops
 -Xverify:none
+-XX:SurvivorRatio=6
 -XX:+UseFastAccessorMethods
 -XX:+UseParNewGC
 -XX:+UseConcMarkSweepGC
