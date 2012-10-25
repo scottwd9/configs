@@ -4,19 +4,24 @@
 [alias]
     br = branch
     c = commit
+    cl = clean -df
     cm = commit -m
     cma = commit -a -m
     co = checkout
     d = diff
     ds = diff --stat
-    f = fetch
-    fp = fetch --prune
+    f = fetch --prune
     l = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(yellow)%d%Creset %s (%Cgreen%cr%Creset)' --decorate --abbrev-commit --
     lg = log -p --
     ls = ls-files
     p = pull
     pr = pull --rebase
     s = status -sb
+    sa = stash apply
+    sd = stash drop
+    sl = stash list
+    sp = stash pop
+    ss = stash save
 [core]
     autocrlf = input
     editor = emacs -nw --no-init-file

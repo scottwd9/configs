@@ -1,15 +1,23 @@
 alias ..='cd ..'
-alias ls='ls -G'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias du='du -hd1'
+alias g='git'
+alias grep="grep --color=auto"
+alias grepi="grep -i"
+alias gs="g s"
 alias l='ls -lF'
 alias la='ls -laF'
-alias du='du -hd1'
-alias p="cd ~/projects; l"
+alias ls='ls -G'
+alias psa="ps aux | grep "
+
 alias d="cd ~/Downloads; l"
-alias g="git"
-alias gs="g s"
+alias p="cd ~/projects; l"
 
 export EDITOR="emacs -nw --no-init-file"
 export VISUAL="emacs -nw --no-init-file"
+export MAVEN_OPTS="-Xmx1g -XX:MaxPermSize=512m -XX:+UseCompressedOops -XX:+UseFastAccessorMethods -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
 
 # BEGIN PROMPT
         RED="\[\033[0;31m\]"
