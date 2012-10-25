@@ -2,26 +2,24 @@
     name = scottwd9
     email = scottwd9
 [alias]
-    p = pull
-    f = fetch
-    fp = fetch --prune
-    pr = pull --rebase
-    s = status -sb
+    br = branch
     c = commit
     cm = commit -m
     cma = commit -a -m
-    br = branch
     co = checkout
     d = diff
     ds = diff --stat
-    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    lg = log -p
-    ll = log --pretty=format:'%h %ad | %s%d [%an]' --decorate --graph --date=short
-    lla = log --pretty=format:'%h %ad | %s%d [%an]' --decorate --graph --date=short --all
+    f = fetch
+    fp = fetch --prune
+    l = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(yellow)%d%Creset %s (%Cgreen%cr%Creset)' --decorate --abbrev-commit --
+    lg = log -p --
     ls = ls-files
+    p = pull
+    pr = pull --rebase
+    s = status -sb
 [core]
     autocrlf = input
-    editor = "emacs -nw --no-init-file"
+    editor = emacs -nw --no-init-file
 [branch]
     autosetupmerge = true
 [push]
