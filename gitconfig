@@ -25,7 +25,7 @@
     latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 [core]
     autocrlf = input
-    editor = emacs -nw --no-init-file
+    editor = s --wait
 [branch]
     autosetupmerge = true
 [push]
