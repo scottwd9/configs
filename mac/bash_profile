@@ -1,46 +1,55 @@
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
+alias ..='cd ..;l'
+alias ...='cd ../..;l'
+alias ....='cd ../../..;l'
+alias .....='cd ../../../..;l'
+alias emacs='emacs -nw --no-init-file'
+alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+alias e="emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
 alias du='du -hd1'
-alias g='git'
+alias fn='find . -name'
 alias grep="grep --color=auto"
-alias grepi="grep -i"
-alias gs="g s"
-alias l='ls -lF'
+alias gr="grep --color=auto"
+alias gri="grep --color=auto -Ri"
+alias grv='grep --color=auto -v'
+alias grvi='grep --color=auto -vi'
+alias l='ls -loF'
 alias la='ls -laF'
 alias ls='ls -G'
-alias psa="ps aux | grep "
+alias psa="ps aux | grep -v grep | grep "
+alias srv='python -m SimpleHTTPServer 8008'
 
 alias d="cd ~/Downloads; l"
 alias p="cd ~/projects; l"
 
-export EDITOR="emacs -nw --no-init-file"
-export VISUAL="emacs -nw --no-init-file"
-export MAVEN_OPTS="-Xmx1g -XX:MaxPermSize=512m -XX:+UseCompressedOops -XX:+UseFastAccessorMethods -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
+alias mt='cd /Users/wscott/amplify/tablet_ios_tools_math/MathTools'
+
+export EDITOR="s --wait"
+export VISUAL="s --wait"
+export MAVEN_OPTS="-Xmn256m -Xms300m -Xmx2g -XX:MaxPermSize=512m -XX:+UseCompressedOops -XX:+UseFastAccessorMethods -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
 
 # BEGIN PROMPT
         RED="\[\033[0;31m\]"
       GREEN="\[\033[0;32m\]"
+     YELLOW="\[\033[0;33m\]"
        BLUE="\[\033[0;34m\]"
  COLOR_NONE="\[\e[0m\]"
 function parse_git_branch {
   git_status="$(git status 2> /dev/null)"
   branch_pattern="^# On branch ([^${IFS}]*)"
   if [[ ! ${git_status}} =~ "working directory clean" ]]; then
-    state="*"
+    state="${YELLOW}*"
   fi
   if [[ ${git_status} =~ ${branch_pattern} ]]; then
     branch=${BASH_REMATCH[1]}
-    echo " ${GREEN}${branch}${COLOR_NONE}${state}"
+    echo " ${GREEN}${branch}${state}"
   fi
 }
 function prompt_func() {
     previous_return_value=$?;
-    prompt="\u@\h ${BLUE}\w$(parse_git_branch)${COLOR_NONE}"
+    prompt="\u@\h:${BLUE}\W$(parse_git_branch)"
     if test $previous_return_value -eq 0
     then
-        PS1="${prompt} $ "
+        PS1="${prompt} ${COLOR_NONE}$ "
     else
         PS1="${prompt} ${RED}!${COLOR_NONE} "
     fi
@@ -48,17 +57,46 @@ function prompt_func() {
 PROMPT_COMMAND=prompt_func
 # END PROMPT
 
-
 # ~/bin
 export PATH=~/bin:$PATH
 
 # Java
+#export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+#export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+# TomCat
+export CATALINA_HOME=~/opt/tomcat
+
+# Maven
+export M2_HOME=~/opt/maven
+export PATH=$M2_HOME/bin:$PATH
+
+# SBT
+# export SBT_HOME=~/opt/sbt
+# export PATH=$SBT_HOME/bin:$PATH
 
 # Scala
 export SCALA_HOME=~/opt/scala
 export PATH=$SCALA_HOME/bin:$PATH
 
+# Grails
+export GRAILS_HOME=~/opt/grails
+export PATH=$GRAILS_HOME/bin:$PATH
+
+# Play
+export PLAY_HOME=~/opt/play
+export PATH=$PLAY_HOME:$PATH
+
 # MongoDB
 export MONGO_HOME=~/opt/mongo
 export PATH=$MONGO_HOME/bin:$PATH
+
+# Load RVM function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH

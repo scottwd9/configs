@@ -12,3 +12,4 @@
 -XX:+UseFastAccessorMethods
 -XX:+UseParNewGC
 -XX:+UseConcMarkSweepGC
+-XX:+CMSIncrementalMode
