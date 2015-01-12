@@ -1,28 +1,30 @@
 [user]
-    name = scottwd9
+    name = William Scott
     email = scottwd9
 [alias]
-    br = branch
+    f = fetch --prune
+    finish = merge --no-ff
+    p = pull --ff-only
+    r = rebase @{u}
+    ri = rebase -i @{u}
+    s = status -sb
     c = commit
     cl = clean -df
-    cm = commit -m
-    cma = commit -a -m
+    br = branch
     co = checkout
-    d = diff
-    ds = diff --stat
-    f = fetch --prune
-    l = log --color --graph --pretty=format:'%Cred%h%Creset %C(bold blue)%an%C(yellow)%d%Creset %s (%Cgreen%cr%Creset)' --decorate --abbrev-commit --
-    lg = log -p --
-    ls = ls-files
-    p = pull
-    pr = pull --rebase
-    s = status -sb
-    sa = stash apply
-    sd = stash drop
+    d = diff --ignore-space-at-eol -b -w --ignore-blank-lines
+    ds = diff --stat --ignore-space-at-eol -b -w --ignore-blank-lines
+    dt = difftool
     sl = stash list
-    sp = stash pop
     ss = stash save
+    sa = stash apply
+    sp = stash pop
+    sd = stash drop
+    ls = ls-files
+    lg = log -p
+    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
     latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+    standup = log --since '1 day ago' --author 'William Scott' --color --pretty=format:'%Cred%h%Creset %s' --abbrev-commit --
 [core]
     autocrlf = input
     editor = s --wait
@@ -32,3 +34,16 @@
     default = current
 [color]
     ui = auto
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
