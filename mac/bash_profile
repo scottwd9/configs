@@ -7,21 +7,20 @@ alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
 alias e="emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
 alias du='du -hd1'
 alias fn='find . -name'
+alias g="git"
 alias grep="grep --color=auto"
-alias gr="grep --color=auto"
-alias gri="grep --color=auto -Ri"
-alias grv='grep --color=auto -v'
-alias grvi='grep --color=auto -vi'
-alias l='ls -loF'
-alias la='ls -laF'
+alias gr="grep --color=auto --exclude=$GREP_EXCLUDES"
+alias gri="grep --color=auto -Ri --exclude=$GREP_EXCLUDES"
+alias grv="grep --color=auto -v --exclude=$GREP_EXCLUDES"
+alias grvi="grep --color=auto -vi --exclude=$GREP_EXCLUDES"
 alias ls='ls -G'
+alias l='ls -loFh'
+alias la='ls -laF'
 alias psa="ps aux | grep -v grep | grep "
 alias srv='python -m SimpleHTTPServer 8008'
 
 alias d="cd ~/Downloads; l"
 alias p="cd ~/projects; l"
-
-alias mt='cd /Users/wscott/amplify/tablet_ios_tools_math/MathTools'
 
 export EDITOR="s --wait"
 export VISUAL="s --wait"
@@ -32,21 +31,31 @@ export MAVEN_OPTS="-Xmn256m -Xms300m -Xmx2g -XX:MaxPermSize=512m -XX:+UseCompres
       GREEN="\[\033[0;32m\]"
      YELLOW="\[\033[0;33m\]"
        BLUE="\[\033[0;34m\]"
+     PURPLE="\[\033[0;35m\]"
  COLOR_NONE="\[\e[0m\]"
-function parse_git_branch {
-  git_status="$(git status 2> /dev/null)"
-  branch_pattern="^# On branch ([^${IFS}]*)"
-  if [[ ! ${git_status}} =~ "working directory clean" ]]; then
-    state="${YELLOW}*"
-  fi
-  if [[ ${git_status} =~ ${branch_pattern} ]]; then
-    branch=${BASH_REMATCH[1]}
-    echo " ${GREEN}${branch}${state}"
+
+git_branch() {
+  local branch
+  local status
+  local dirty
+  if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
+    status=$(git status --porcelain 2> /dev/null)
+    if [[ "$status" != "" ]]; then
+      dirty='*'
+    else
+      dirty=''
+    fi
+
+    if [[ "$branch" == "HEAD" ]]; then
+      branch='<detached>'
+    fi
+    echo " ${GREEN}$branch${YELLOW}$dirty"
   fi
 }
+
 function prompt_func() {
     previous_return_value=$?;
-    prompt="\u@\h:${BLUE}\W$(parse_git_branch)"
+    prompt="\u@${PURPLE}\h${COLOR_NONE}:${BLUE}\W$(git_branch)"
     if test $previous_return_value -eq 0
     then
         PS1="${prompt} ${COLOR_NONE}$ "
@@ -55,8 +64,9 @@ function prompt_func() {
     fi
 }
 PROMPT_COMMAND=prompt_func
-# END PROMPT
 
+# PS1="${COLOR_NONE}\u@${PURPLE}\h${COLOR_NONE}:${BLUE}\W${COLOR_NONE} $ "
+# END PROMPT
 # ~/bin
 export PATH=~/bin:$PATH
 
@@ -65,38 +75,10 @@ export PATH=~/bin:$PATH
 #export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 export JAVA_HOME=$(/usr/libexec/java_home)
 
-# TomCat
-export CATALINA_HOME=~/opt/tomcat
-
 # Maven
 export M2_HOME=~/opt/maven
 export PATH=$M2_HOME/bin:$PATH
 
-# SBT
-# export SBT_HOME=~/opt/sbt
-# export PATH=$SBT_HOME/bin:$PATH
-
 # Scala
 export SCALA_HOME=~/opt/scala
 export PATH=$SCALA_HOME/bin:$PATH
-
-# Grails
-export GRAILS_HOME=~/opt/grails
-export PATH=$GRAILS_HOME/bin:$PATH
-
-# Play
-export PLAY_HOME=~/opt/play
-export PATH=$PLAY_HOME:$PATH
-
-# MongoDB
-export MONGO_HOME=~/opt/mongo
-export PATH=$MONGO_HOME/bin:$PATH
-
-# Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
