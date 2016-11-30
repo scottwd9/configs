@@ -1,11 +1,11 @@
 ################################################################################
 # exports
 ################################################################################
-export EDITOR="s --wait"
-export VISUAL="s --wait"
+export EDITOR="emacs -nw --no-init-file"
+export VISUAL="emacs -nw --no-init-file"
 
 export MAVEN_OPTS="-Xmn256m -Xms300m -Xmx2g -XX:MaxPermSize=512m -XX:+UseCompressedOops -XX:+UseFastAccessorMethods -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
-export GREP_EXCLUDES="{*/dist,dist,node_modules,bower_components,lib}/*"
+export GREP_EXCLUDES="{dist,node_modules}/*"
 ################################################################################
 
 ################################################################################
@@ -34,6 +34,9 @@ alias srv='python -m SimpleHTTPServer 8008'
 
 alias d="cd ~/Downloads; l"
 alias p="cd ~/projects; l"
+
+alias nr="npm run $@"
+alias npi="npm prune && npm install"
 ################################################################################
 
 ################################################################################
