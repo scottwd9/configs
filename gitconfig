@@ -1,37 +1,36 @@
 [user]
-    name = William Scott
-    email = scottwd9
+  name = William Scott
+  email = scottwd9
 [alias]
-    f = fetch --prune
-    finish = merge --no-ff
-    p = pull --ff-only
-    r = rebase @{u}
-    ri = rebase -i @{u}
-    s = status -sb
-    c = commit
-    cl = clean -df
-    br = branch
-    co = checkout
-    d = diff --ignore-space-at-eol -b -w --ignore-blank-lines
-    ds = diff --stat --ignore-space-at-eol -b -w --ignore-blank-lines
-    dt = difftool
-    sl = stash list
-    ss = stash save
-    sa = stash apply
-    sp = stash pop
-    sd = stash drop
-    ls = ls-files
-    lg = log -p
-    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-    latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
-    standup = log --since '1 day ago' --author 'William Scott' --color --pretty=format:'%Cred%h%Creset %s' --abbrev-commit --
+  f = fetch --prune
+  p = pull --rebase
+  r = rebase @{u}
+  ri = rebase -i @{u}
+  s = status -sb
+  c = commit
+  cl = clean -df
+  br = branch
+  co = checkout
+  d = diff
+  dc = diff --cached --ignore-space-at-eol -b -w --ignore-blank-lines
+  ds = diff --stat --ignore-space-at-eol -b -w --ignore-blank-lines
+  dt = difftool
+  sl = stash list
+  ss = stash save
+  sa = stash apply
+  sp = stash pop
+  sd = stash drop
+  ls = ls-files
+  l = log --color --graph --pretty=format:'%C(magenta)%h%Creset %s%C(yellow)%d%Creset (%C(blue)%an%Creset %Cgreen%cr%Creset)'
+  latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+  st = status
 [core]
-    autocrlf = input
-    editor = s --wait
-    excludesfile = /Users/wscott/.gitignore_global
+  autocrlf = input
+  editor = s --wait
+  excludesfile = /Users/wscott/.gitignore_global
 [branch]
-    autosetupmerge = true
+  autosetupmerge = always
 [push]
-    default = current
+  default = current
 [color]
-    ui = auto
+  ui = auto
