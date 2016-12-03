@@ -1,0 +1,9 @@
+{
+    "editor.fontSize": 14,
+    "editor.insertSpaces": true,
+    "editor.renderIndentGuides": true,
+    "editor.scrollBeyondLastLine": false,
+    "editor.tabSize": 2,
+    "editor.wrappingColumn": 0,
+    "files.autoSave": "onFocusChange",
+}

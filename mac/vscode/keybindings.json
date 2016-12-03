@@ -1,0 +1,25 @@
+[
+    {
+        "key": "cmd+backspace",
+        "when": "editorTextFocus",
+        "command": "editor.action.deleteLines"
+    },
+    {
+        "key": "cmd+shift+[",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "cmd+shift+]",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "alt+down",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+up",
+        "command": "editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+    },
+]
