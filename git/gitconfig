@@ -26,8 +26,8 @@
   st = status
 [core]
   autocrlf = input
-  editor = s --wait
-  excludesfile = /Users/wscott/.gitignore_global
+  editor = emacs -nw -q
+  excludesfile = ~/.gitignore_global
 [branch]
   autosetupmerge = always
 [push]
