@@ -2,3 +2,5 @@
 
 cp gitconfig ~/.gitconfig
 cp gitignore_global ~/.gitignore_global
+
+emacs -nw -q ~/.gitconfig
