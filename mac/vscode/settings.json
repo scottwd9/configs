@@ -6,4 +6,6 @@
     "editor.tabSize": 2,
     "editor.wrappingColumn": 0,
     "files.autoSave": "onFocusChange",
+    "flow.pathToFlow": "/Users/bscott/.nvm/versions/node/v5.10.1/bin/flow",
+    "javascript.validate.enable": false,
 }
