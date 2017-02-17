@@ -22,4 +22,9 @@
         "command": "editor.action.smartSelect.grow",
         "when": "editorTextFocus"
     },
+    {
+        "key": "shift+cmd+l",
+        "command": "editor.action.insertCursorAtEndOfEachLineSelected",
+        "when": "editorTextFocus"
+    }
 ]

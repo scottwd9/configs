@@ -1,11 +1,22 @@
 {
-    "editor.fontSize": 14,
+    "editor.fontSize": 12,
     "editor.insertSpaces": true,
     "editor.renderIndentGuides": true,
     "editor.scrollBeyondLastLine": false,
     "editor.tabSize": 2,
     "editor.wrappingColumn": 0,
     "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
     "flow.pathToFlow": "/Users/bscott/.nvm/versions/node/v5.10.1/bin/flow",
     "javascript.validate.enable": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/lib": true,
+        "**/js-lib": true,
+        "**/dist": true,
+        "**/builds": true,
+        "**/mashup": true,
+    },
+    "window.openFilesInNewWindow": "on",
 }
