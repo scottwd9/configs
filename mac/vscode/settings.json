@@ -4,7 +4,7 @@
     "editor.renderIndentGuides": true,
     "editor.scrollBeyondLastLine": false,
     "editor.tabSize": 2,
-    "editor.wrappingColumn": 0,
+    "editor.wordWrap": "on",
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
     "flow.pathToFlow": "/Users/bscott/.nvm/versions/node/v5.10.1/bin/flow",
