@@ -8,7 +8,6 @@
     "editor.wordWrap": "on",
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
-    "flow.pathToFlow": "/Users/bscott/.nvm/versions/node/v5.10.1/bin/flow",
     "javascript.validate.enable": false,
     "search.exclude": {
         "**/node_modules": true,
@@ -17,7 +16,7 @@
         "**/js-lib": true,
         "**/dist": true,
         "**/builds": true,
-        "**/mashup": true,
+        "**/mashup": true
     },
-    "window.openFilesInNewWindow": "on",
+    "window.openFilesInNewWindow": "on"
 }
