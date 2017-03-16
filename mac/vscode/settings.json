@@ -2,6 +2,7 @@
     "editor.fontSize": 12,
     "editor.insertSpaces": true,
     "editor.renderIndentGuides": true,
+    "editor.renderWhitespace": "all",
     "editor.scrollBeyondLastLine": false,
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
