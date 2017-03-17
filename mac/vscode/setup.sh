@@ -21,6 +21,7 @@ createCodeSymlink keybindings.json
 
 installExtension 2gua.rainbow-brackets
 installExtension EditorConfig.EditorConfig
+installExtension christian-kohler.path-intellisense
 installExtension dbaeumer.vscode-eslint
 installExtension dzannotti.vscode-babel-coloring
 installExtension eg2.vscode-npm-script

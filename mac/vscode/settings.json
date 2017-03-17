@@ -6,7 +6,9 @@
     "editor.scrollBeyondLastLine": false,
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
+    "extensions.autoUpdate": true,
     "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "javascript.validate.enable": false,
     "search.exclude": {
@@ -18,5 +20,6 @@
         "**/builds": true,
         "**/mashup": true
     },
-    "window.openFilesInNewWindow": "on"
+    "window.openFilesInNewWindow": "default",
+    "workbench.welcome.enabled": false
 }
