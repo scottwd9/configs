@@ -8,8 +8,7 @@
 	r = rebase @{u}
 	ri = rebase -i @{u}
 	s = status -sb
-	ci = commit
-	cim = commit -m
+	cm = commit -m
 	cl = clean -df
 	br = branch
 	co = checkout
@@ -23,10 +22,13 @@
 	sp = stash pop
 	sd = stash drop
 	ls = ls-files
-	lg = log --color --graph --pretty=format:'%C(magenta)%h%Creset %s%C(yellow)%d%Creset (%C(blue)%an%Creset %Cgreen%cr%Creset)'
+	lg = log --color --graph --pretty=format:'%C(magenta)%h%Creset%C(yellow)%d%Creset %s (%C(blue)%an%Creset %Cgreen%cr%Creset)'
 	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 	mv = branch -m
 	st = status
+[merge]
+	ff = only
+	conflictstyle = diff3
 [core]
 	autocrlf = input
 	editor = emacs -nw -q
@@ -35,6 +37,7 @@
 	autosetuprebase = always
 [push]
 	default = simple
+	followTags = true
 [rebase]
 	autostash = true
 [color]
