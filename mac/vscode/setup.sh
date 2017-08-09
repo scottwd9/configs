@@ -28,3 +28,4 @@ installExtension eg2.vscode-npm-script
 installExtension oderwat.indent-rainbow
 installExtension shinnn.stylelint
 installExtension xabikos.JavaScriptSnippets
+installExtension zhuangtongfa.Material-theme
