@@ -19,13 +19,8 @@ installExtension() {
 createCodeSymlink settings.json
 createCodeSymlink keybindings.json
 
-installExtension 2gua.rainbow-brackets
-installExtension EditorConfig.EditorConfig
+installExtension christian-kohler.npm-intellisense
 installExtension christian-kohler.path-intellisense
 installExtension dbaeumer.vscode-eslint
-installExtension dzannotti.vscode-babel-coloring
+installExtension EditorConfig.EditorConfig
 installExtension eg2.vscode-npm-script
-installExtension oderwat.indent-rainbow
-installExtension shinnn.stylelint
-installExtension xabikos.JavaScriptSnippets
-installExtension zhuangtongfa.Material-theme
