@@ -4,7 +4,7 @@
 [alias]
 	f = fetch --prune
 	pu = push -u origin HEAD
-	p = pull --rebase
+	p = pull --rebase --prune
 	r = rebase @{u}
 	ri = rebase -i @{u}
 	s = status -sb

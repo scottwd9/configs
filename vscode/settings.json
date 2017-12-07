@@ -35,5 +35,6 @@
     },
     "window.openFilesInNewWindow": "default",
     "window.restoreWindows": "none",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Atom One Dark"
 }
