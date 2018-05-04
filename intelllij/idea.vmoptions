@@ -2,11 +2,12 @@
 
 -server
 -ea
--Xmx4g
--Xms2g
+-Xms3g
+-Xmx3g
+-XX:ReservedCodeCacheSize=512m
+-XX:+UseCompressedOops
 -XX:-UseG1GC
 -XX:+UseParNewGC
 -XX:+UseConcMarkSweepGC
--XX:ReservedCodeCacheSize=256m
 -XX:-OmitStackTraceInFastThrow
 -Dsun.io.useCanonCaches=false
