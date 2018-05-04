@@ -1,14 +1,34 @@
-// [
-//     {
-//         "key": "alt+down",
-//         "command": "editor.action.smartSelect.shrink",
-//         "when": "editorTextFocus"
-//     },
-//     {
-//         "key": "alt+up",
-//         "command": "editor.action.smartSelect.grow",
-//         "when": "editorTextFocus"
-//     },
+[
+    {
+        "key": "alt+down",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+up",
+        "command": "editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+backspace",
+        "command": "editor.action.deleteLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+cmd+down",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+cmd+up",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    }
 //     {
 //         "key": "cmd+0",
 //         "command": "workbench.action.openLastEditorInGroup"
@@ -48,25 +68,5 @@
 //     {
 //         "key": "cmd+9",
 //         "command": "workbench.action.openEditorAtIndex9"
-//     },
-//     {
-//         "key": "cmd+backspace",
-//         "command": "editor.action.deleteLines",
-//         "when": "editorTextFocus && !editorReadonly"
-//     },
-//     {
-//         "key": "ctrl+cmd+down",
-//         "command": "editor.action.moveLinesDownAction",
-//         "when": "editorTextFocus && !editorReadonly"
-//     },
-//     {
-//         "key": "ctrl+cmd+up",
-//         "command": "editor.action.moveLinesUpAction",
-//         "when": "editorTextFocus && !editorReadonly"
-//     },
-//     {
-//         "key": "ctrl+m",
-//         "command": "editor.action.jumpToBracket",
-//         "when": "editorTextFocus"
 //     }
-// ]
+]
