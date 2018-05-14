@@ -47,7 +47,7 @@
     "workbench.colorCustomizations": {
         "editorIndentGuide.activeBackground": "#cccccc"
     },
-    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreview": true,
     "workbench.startupEditor": "none",
     "window.zoomLevel": 0,
 }
