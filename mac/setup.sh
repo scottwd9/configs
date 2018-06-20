@@ -3,6 +3,7 @@
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
 sudo spctl --master-disable  # Allow running apps from Anywhere
+sudo pmset -a sms 0 # Disable sudden motion sensor
 
 sudo pmset -a hibernatemode 0  # Disable sleep image
 sudo rm /var/vm/sleepimage
