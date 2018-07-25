@@ -1,7 +1,7 @@
 {
     "editor.cursorBlinking": "solid",
     "editor.fontFamily": "Hack",
-    "editor.fontSize": 14,
+    "editor.fontSize": 12,
     "editor.insertSpaces": true,
     "editor.minimap.enabled": false,
     "editor.renderIndentGuides": true,
@@ -29,6 +29,7 @@
     "gitlens.codeLens.enabled": false,
     "gitlens.currentLine.enabled": false,
     "gitlens.explorers.avatars": false,
+    "gitlens.historyExplorer.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "javascript.validate.enable": false,
     "search.exclude": {
@@ -50,5 +51,4 @@
     "workbench.editor.enablePreview": true,
     "workbench.startupEditor": "none",
     "window.zoomLevel": 0,
-    "gitlens.historyExplorer.enabled": false,
 }
