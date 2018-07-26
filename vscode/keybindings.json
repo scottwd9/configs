@@ -28,5 +28,10 @@
         "key": "ctrl+m",
         "command": "editor.action.jumpToBracket",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
     }
 ]
