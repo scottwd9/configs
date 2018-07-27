@@ -2,6 +2,8 @@
 
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
+defaults write NSGlobalDomain AppleFontSmoothing -int 1 #mojave LCD font aliasing
+
 sudo spctl --master-disable  # Allow running apps from Anywhere
 sudo pmset -a sms 0 # Disable sudden motion sensor
 
