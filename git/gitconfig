@@ -9,7 +9,7 @@
 	ri = rebase -i @{u}
 	s = status -sb
 	cm = commit -m
-	cl = clean -df
+	cl = clean -dfx
 	br = branch
 	co = checkout
 	d = diff
@@ -42,3 +42,5 @@
 	autostash = true
 [color]
 	ui = auto
+[rerere]
+	enabled = true
