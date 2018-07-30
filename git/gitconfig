@@ -26,6 +26,7 @@
 	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 	mv = branch -m
 	st = status
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [merge]
 	ff = only
 	conflictstyle = diff3
