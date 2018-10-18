@@ -4,16 +4,18 @@
 [alias]
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 	br = branch
+	c = commit
 	cl = clean -dfx
 	cm = commit -m
 	co = checkout
 	d = diff
-	dc = diff --cached --ignore-space-at-eol -b -w --ignore-blank-lines
+	dc = diff --cached
 	ds = diff --stat --ignore-space-at-eol -b -w --ignore-blank-lines
 	dt = difftool
 	f = fetch --prune
-	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
-	lg = log --color --graph --pretty=format:'%C(magenta)%h%Creset%C(yellow)%d%Creset %s (%C(blue)%an%Creset %Cgreen%cr%Creset)'
+	l = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit
+	la = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit --all
+	latest = for-each-ref refs/remotes/origin/ --sort=committerdate --format='%(color:magenta)%(refname:short)%(color:reset) %(color:blue)%(authorname)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset)'
 	ll = log --stat --abbrev-commit
 	ls = ls-files
 	mv = branch -m
