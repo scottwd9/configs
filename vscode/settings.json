@@ -1,11 +1,11 @@
 {
     "editor.cursorBlinking": "solid",
-    "editor.fontFamily": "Hack",
+    "editor.fontFamily": "'SF Mono'",
     "editor.fontSize": 12,
     "editor.insertSpaces": true,
     "editor.minimap.enabled": false,
     "editor.renderIndentGuides": true,
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "boundary",
     "editor.rulers": [
         80
     ],
@@ -48,7 +48,6 @@
     "workbench.colorCustomizations": {
         "editorIndentGuide.activeBackground": "#cccccc"
     },
-    "workbench.editor.enablePreview": true,
     "workbench.startupEditor": "none",
     "window.zoomLevel": 0,
 }
