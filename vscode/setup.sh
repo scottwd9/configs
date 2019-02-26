@@ -21,8 +21,10 @@ createCodeSymlink keybindings.json
 
 installExtension christian-kohler.npm-intellisense
 installExtension christian-kohler.path-intellisense
-installExtension CoenraadS.bracket-pair-colorizer
+installExtension CoenraadS.bracket-pair-colorizer-2
 installExtension dbaeumer.vscode-eslint
-installExtension eamodio.gitlens
+installExtension dracula-theme.theme-dracula
 installExtension EditorConfig.EditorConfig
 installExtension eg2.vscode-npm-script
+installExtension esbenp.prettier-vscode
+installExtension ms-python.python
