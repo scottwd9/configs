@@ -13,6 +13,7 @@
 	dc = diff --cached
 	ds = diff --stat --ignore-space-at-eol -b -w --ignore-blank-lines
 	dt = difftool
+	dtc = difftool --cached
 	f = fetch --prune
 	l = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit
 	la = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit --all
@@ -49,3 +50,7 @@
 	ui = auto
 [rerere]
 	enabled = true
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
