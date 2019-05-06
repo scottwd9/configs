@@ -2,12 +2,21 @@
 
 -server
 -ea
--Xms3g
--Xmx3g
+-Xms128m
+-Xmx2g
 -XX:ReservedCodeCacheSize=512m
 -XX:+UseCompressedOops
 -XX:-UseG1GC
 -XX:+UseParNewGC
 -XX:+UseConcMarkSweepGC
--XX:-OmitStackTraceInFastThrow
+-Dfile.encoding=UTF-8
+-XX:SoftRefLRUPolicyMSPerMB=50
 -Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Djdk.http.auth.tunneling.disabledSchemes=""
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-Xverify:none
+
+-XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
+-XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
