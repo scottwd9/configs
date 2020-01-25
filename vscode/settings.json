@@ -1,6 +1,6 @@
 {
   "debug.toolBarLocation": "docked",
-  "editor.fontFamily": "'SF Mono'",
+  "editor.fontFamily": "'JetBrains Mono'",
   "editor.insertSpaces": true,
   "editor.minimap.enabled": false,
   "editor.renderIndentGuides": true,
@@ -35,6 +35,7 @@
     "**/builds": true,
     "**/mashup": true
   },
+  "terminal.integrated.inheritEnv": false,
   "terminal.integrated.scrollback": 500000,
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
@@ -45,10 +46,11 @@
     "editorIndentGuide.activeBackground": "#cccccc"
   },
   "workbench.colorTheme": "Dracula Soft",
-  "workbench.editor.showTabs": false,
+  "workbench.editor.highlightModifiedTabs": true,
   "workbench.startupEditor": "none",
   "[javascript]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -58,5 +60,5 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
 }
