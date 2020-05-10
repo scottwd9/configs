@@ -37,7 +37,7 @@
 	conflictstyle = diff3
 [core]
 	autocrlf = input
-	editor = emacs -nw -q
+	editor = code --wait
 	excludesfile = ~/.gitignore_global
 [branch]
 	autosetuprebase = always
