@@ -20,11 +20,12 @@
 	latest = for-each-ref refs/remotes/origin/ --sort=committerdate --format='%(color:magenta)%(refname:short)%(color:reset) %(color:blue)%(authorname)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset)'
 	ll = log --stat --abbrev-commit
 	ls = ls-files
+	lu = l @{u}
 	mv = branch -m
 	p = pull --rebase --prune
 	pu = push -u origin HEAD
-	r = rebase @{u}
-	ri = rebase -i @{u}
+	r = rebase
+	ru = rebase @{u}
 	s = status -sb
 	sa = stash apply
 	sd = stash drop
