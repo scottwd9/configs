@@ -1,6 +1,7 @@
 {
   "debug.toolBarLocation": "docked",
-  "editor.fontFamily": "'JetBrains Mono'",
+  "editor.fontFamily": "Menlo",
+  "editor.fontSize": 14,
   "editor.insertSpaces": true,
   "editor.minimap.enabled": false,
   "editor.renderIndentGuides": true,
@@ -45,11 +46,9 @@
   "telemetry.enableCrashReporter": false,
   "window.openFilesInNewWindow": "default",
   "window.restoreWindows": "none",
-  "window.zoomLevel": 0,
   "workbench.colorCustomizations": {
     "editorIndentGuide.activeBackground": "#cccccc"
   },
-  "workbench.colorTheme": "Dracula Soft",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.startupEditor": "none",
   "[javascript]": {
@@ -65,5 +64,13 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.fontSize": 14,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "workbench.editor.showTabs": false,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 9,
+  "python.showStartPage": false,
+  "workbench.editorAssociations": [],
+  "window.zoomLevel": 0,
 }
