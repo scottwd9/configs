@@ -21,6 +21,7 @@
 	ll = log --stat --abbrev-commit
 	ls = ls-files
 	lu = l @{u}
+	lom = l origin/master
 	mv = branch -m
 	p = pull --rebase --prune
 	pu = push -u origin HEAD
