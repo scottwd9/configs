@@ -3,9 +3,10 @@
 	email = scottwd9
 [alias]
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-	amend = commit --amend
+	amend = commit --amend --no-edit
 	br = branch
 	c = commit
+	cb = !git branch --show-current | tr -d '\n' | pbcopy
 	cl = clean -dfx
 	cm = commit -m
 	co = checkout
@@ -15,13 +16,14 @@
 	dt = difftool
 	dtc = difftool --cached
 	f = fetch --prune
+	fs = !git f && git s
 	l = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit
 	la = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit --all
 	latest = for-each-ref refs/remotes/origin/ --sort=committerdate --format='%(color:magenta)%(refname:short)%(color:reset) %(color:blue)%(authorname)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset)'
 	ll = log --stat --abbrev-commit
 	ls = ls-files
 	lu = l @{u}
-	lom = l origin/master
+	lm = !git l `git symbolic-ref refs/remotes/origin/HEAD`
 	mv = branch -m
 	p = pull --rebase --prune
 	pu = push -u origin HEAD
@@ -36,7 +38,6 @@
 	st = status
 [merge]
 	ff = only
-	conflictstyle = diff3
 [core]
 	autocrlf = input
 	editor = code --wait
@@ -54,5 +55,7 @@
 	enabled = true
 [difftool]
 	prompt = false
-[mergetool]
-	prompt = false
+[diff]
+	tool = IntelliJ
+[difftool "IntelliJ"]
+	cmd = open -na \"/Applications/IntelliJ IDEA.app/Contents/MacOS/idea\" -W --args diff $LOCAL $REMOTE
