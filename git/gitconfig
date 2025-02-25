@@ -1,6 +1,9 @@
 [user]
 	name = William Scott
-	email = scottwd9
+	email = wds
+[user]
+	name = William Scott
+	email = wds
 [alias]
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 	amend = commit --amend --no-edit
@@ -16,6 +19,7 @@
 	dt = difftool
 	dtc = difftool --cached
 	f = fetch --prune
+	fpush = push --force-with-lease
 	fs = !git f && git s
 	l = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit
 	la = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit --all
@@ -25,6 +29,7 @@
 	lu = l @{u}
 	lm = !git l `git symbolic-ref refs/remotes/origin/HEAD`
 	mv = branch -m
+	out = log @{u}..
 	p = pull --rebase --prune
 	pu = push -u origin HEAD
 	r = rebase
@@ -36,6 +41,15 @@
 	sp = stash pop
 	ss = stash save
 	st = status
+	xxx = !git reset --hard && git clean -df && git fs
+[branch]
+	sort = -committerdate
+[column]
+	ui = auto
+[init]
+	defaultbranch = main
+[tag]
+	sort = version:refname
 [merge]
 	ff = only
 [core]
@@ -44,18 +58,32 @@
 	excludesfile = ~/.gitignore_global
 [branch]
 	autosetuprebase = always
+[fetch]
+	prune = true
+	prunetags = true
+	all = true
 [push]
 	default = simple
-	followTags = true
+	autosetupremote = true
+	followtags = true
 [rebase]
+	autosquash = true
 	autostash = true
+	updaterefs = true
+[help]
+	autocorrect = prompt
 [color]
 	ui = auto
 [rerere]
 	enabled = true
+	autoupdate = true
 [difftool]
 	prompt = false
 [diff]
+	algorithm = histogram
+	colormoved = plain
+	mnemonicprefix = true
+	renames = true
 	tool = IntelliJ
 [difftool "IntelliJ"]
 	cmd = open -na \"/Applications/IntelliJ IDEA.app/Contents/MacOS/idea\" -W --args diff $LOCAL $REMOTE
