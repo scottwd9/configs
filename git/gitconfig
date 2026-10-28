@@ -1,11 +1,9 @@
 [user]
 	name = William Scott
 	email = wds
-[user]
-	name = William Scott
-	email = wds
 [alias]
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+  hotspots = "!git log --format=format: --name-only --since=\"1 year ago\" | sort | uniq -c | sort -nr | head -50"
 	amend = commit --amend --no-edit
 	br = branch
 	c = commit
@@ -16,24 +14,28 @@
 	d = diff
 	dc = diff --cached
 	ds = diff --stat --ignore-space-at-eol -b -w --ignore-blank-lines
+	dsinc = ds @...origin/HEAD
 	dt = difftool
 	dtc = difftool --cached
-	f = fetch --prune
-	fpush = push --force-with-lease
+	f = fetch
 	fs = !git f && git s
+	inc = "!f() { bash -c \"comm -12 <(git diff --name-only @...origin/HEAD | sort) <(git diff --name-only origin/HEAD...@ | sort)\"; }; f"
 	l = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit
 	la = log --color --graph --pretty=format:'%C(yellow)%h%Creset%C(magenta)%d%Creset %s %C(blue)%an %C(green)%cr%Creset' --abbrev-commit --all
 	latest = for-each-ref refs/remotes/origin/ --sort=committerdate --format='%(color:magenta)%(refname:short)%(color:reset) %(color:blue)%(authorname)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset)'
+	linc = l @...origin/HEAD
 	ll = log --stat --abbrev-commit
 	ls = ls-files
 	lu = l @{u}
-	lm = !git l `git symbolic-ref refs/remotes/origin/HEAD`
+	lm = !git l `git rev-parse --abbrev-ref origin/HEAD`
 	mv = branch -m
 	out = log @{u}..
-	p = pull --rebase --prune
-	pu = push -u origin HEAD
+	p = pull --rebase
+	pu = push -u origin @
+	pushf = push --force-with-lease --force-if-includes
 	r = rebase
 	ru = rebase @{u}
+	rinc = rebase origin/HEAD
 	s = status -sb
 	sa = stash apply
 	sd = stash drop
@@ -52,6 +54,7 @@
 	sort = version:refname
 [merge]
 	ff = only
+	conflictstyle = zdiff3
 [core]
 	autocrlf = input
 	editor = code --wait
@@ -74,9 +77,6 @@
 	autocorrect = prompt
 [color]
 	ui = auto
-[rerere]
-	enabled = true
-	autoupdate = true
 [difftool]
 	prompt = false
 [diff]
@@ -87,3 +87,6 @@
 	tool = IntelliJ
 [difftool "IntelliJ"]
 	cmd = open -na \"/Applications/IntelliJ IDEA.app/Contents/MacOS/idea\" -W --args diff $LOCAL $REMOTE
+[rerere]
+	enabled = true
+	autoupdate = true
