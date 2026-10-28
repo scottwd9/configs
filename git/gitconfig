@@ -3,7 +3,7 @@
 	email = wds
 [alias]
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-  hotspots = "!git log --format=format: --name-only --since=\"1 year ago\" | sort | uniq -c | sort -nr | head -50"
+	hotspots = "!git log --format=format: --name-only --since=\"1 year ago\" | sort | uniq -c | sort -nr | head -50"
 	amend = commit --amend --no-edit
 	br = branch
 	c = commit
